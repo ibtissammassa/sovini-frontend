@@ -1,12 +1,21 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import {Plus_Jakarta_Sans} from "next/font/google";
 import "@/styles/globals.css";
 
-import Link from "next/link";
-import { PreviewAlert } from "@/components/preview-alert";
-import { ReactNode } from "react";
+//Components
+import NavBar from "@/components/NavBar";
 
-const inter = Inter({ subsets: ["latin"] });
+import Link from "next/link";
+
+const inter = Inter({ subsets: ["latin"],variable: '--font-inter', });
+const plus_jakarta_sans = Plus_Jakarta_Sans({
+  weight: ['400', '700'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-plus_jakarta_sans',
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,26 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <PreviewAlert />
-        <div className="max-w-screen-md px-6 mx-auto">
-          <header>
-            <div className="container flex items-center justify-between py-6 mx-auto">
-              <Link href="/" className="text-2xl font-semibold no-underline">
-                Next.js for Drupal
-              </Link>
-              <Link
-                href="https://next-drupal.org/docs"
-                target="_blank"
-                rel="external"
-                className="hover:text-blue-600"
-              >
-                Read the docs
-              </Link>
-            </div>
-          </header>
-          <main className="container py-10 mx-auto">{children}</main>
-        </div>
+      <body className={`${inter.className} ${plus_jakarta_sans.variable} bg-gray-300 relative`}>
+        <NavBar />
+        {children}
       </body>
     </html>
   );
