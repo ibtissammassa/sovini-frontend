@@ -14,7 +14,7 @@ export default async function Home() {
   return (
   <div className="relative bg-[url('/HomePic.jpg')] w-full h-screen gap-4 px-44 text-center bg-cover flex flex-col items-center justify-center text-white">
             {/* Transparent overlay */}
-            <div className="absolute inset-0 bg-black opacity-20 z-0"></div>
+            <div className="absolute inset-0 bg-black opacity-40 z-0"></div>
     <div className="relative ">
       <h1 className="text-7xl font-bold z-10">Solve problems all around the world</h1>
       <Image className="absolute" alt="accent" src={Hand_drawn_accents_left}/>

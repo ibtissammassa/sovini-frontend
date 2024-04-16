@@ -7,6 +7,7 @@ import "@/styles/globals.css";
 import NavBar from "@/components/NavBar";
 
 import Link from "next/link";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"],variable: '--font-inter', });
 const plus_jakarta_sans = Plus_Jakarta_Sans({
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body className={`${inter.className} ${plus_jakarta_sans.variable} bg-gray-300 relative`}>
         <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );
